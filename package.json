@@ -6,7 +6,6 @@
   "author": "Simon Domingue",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
-    "@discordjs/uws": "^11.149.1",
     "erlpack": "github:hammerandchisel/erlpack",
     "ffmpeg-static": "^2.7.0",
     "libsodium-wrappers": "^0.7.6",
