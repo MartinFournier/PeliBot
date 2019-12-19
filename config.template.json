@@ -1,0 +1,6 @@
+{
+  "token" : "REPLACE_ME_WITH_BOT_TOKEN",
+  "textChannelId" : "REPLACE_ME",
+  "voiceChannelId" : "REPLACE_ME",
+  "globalCooldown" : 10000
+}

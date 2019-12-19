@@ -1,11 +1,10 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const auth = require('./auth.json');
+const config = require('./config.json');
 
-const globalCooldown = 10000;
-
-const botTextChannelID = '635660555457134603';
-const botVoiceChannelID = '636344717914800153';
+const globalCooldown = config.globalCooldown || 10000;
+const botTextChannelID = config.textChannelId;
+const botVoiceChannelID = config.voiceChannelId;
 
 const commands = {
     // Other commands
@@ -146,4 +145,4 @@ bot.on('message', message => {
 
 });
 
-bot.login(auth.token);
+bot.login(config.token);
