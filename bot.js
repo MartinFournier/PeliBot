@@ -68,7 +68,7 @@ bot.on('message', message => {
 
     let command = message.content;
     let textChannel = message.channel;
-    let voiceChannel = message.member.voiceChannel;
+    let voiceChannel = message.member.voice.channel;
 
     // Check if message is from PeliBot Channel
     if (textChannel.id !== botTextChannelID) return;
@@ -137,7 +137,7 @@ bot.on('message', message => {
 
     voiceChannel.join().then( connection =>
     {
-        const dispatcher = connection.playFile('./assets/sounds/' + audioFile, { volume : audioVolume });
+        const dispatcher = connection.play('./assets/sounds/' + audioFile, { volume : audioVolume });
         dispatcher.on("end", end => {
             returnToNest();
         });

@@ -5,12 +5,12 @@
   "main": "bot.js",
   "author": "Simon Domingue",
   "dependencies": {
-    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
-    "discord.js": "^11.5.1",
-    "ffmpeg": "0.0.4",
-    "ffmpeg-binaries": "^4.0.0",
-    "node-opus": "^0.3.3",
-    "winston": "^3.2.1"
+    "discord.js": "github:discordjs/discord.js",
+    "@discordjs/uws": "^11.149.1",
+    "erlpack": "github:hammerandchisel/erlpack",
+    "ffmpeg-static": "^2.7.0",
+    "libsodium-wrappers": "^0.7.6",
+    "node-opus": "^0.3.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
