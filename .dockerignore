@@ -1,0 +1,11 @@
+auth.json
+config.json
+config.template.json
+
+README.md
+Dockerfile
+.dockerignore
+.gitignore
+.git
+
+node_modules

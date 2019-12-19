@@ -41,3 +41,16 @@ vim config.json
 npm install
 npm start
 ```
+
+## Docker
+
+```sh
+docker build -t mingodev/pelibot .
+```
+
+```sh
+docker run \
+  -it --rm \
+  -v $PWD/config.json:/app/config.json \
+  mingodev/pelibot
+```
