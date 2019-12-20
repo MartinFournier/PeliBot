@@ -68,6 +68,7 @@ bot.on('message', message => {
     let command = message.content;
     let textChannel = message.channel;
     let voiceChannel = message.member.voice.channel;
+    let isInVoiceChannel = typeof voiceChannel !== 'undefined' && voiceChannel !== null;
 
     // Check if message is from PeliBot Channel
     if (textChannel.id !== botTextChannelID) return;
@@ -90,10 +91,10 @@ bot.on('message', message => {
 
     }
 
-    if (command === '!stahp' && typeof voiceChannel !== 'undefined') {
+    if (command === '!stahp' && isInVoiceChannel) {
         returnToNest();
         return;
-    } else if (command === '!sthap' && typeof voiceChannel === 'undefined') {
+    } else if (command === '!sthap' && !isInVoiceChannel) {
         let errorMessage = errors['not_in_voice_channel'];
         message.channel.send(errorMessage);
         return;
@@ -128,7 +129,7 @@ bot.on('message', message => {
         : 1;
 
     // Not in a voice channel
-    if (typeof voiceChannel === 'undefined') {
+    if (!isInVoiceChannel) {
         let errorMessage = errors['not_in_a_channel'];
         message.channel.send(errorMessage);
         return;
