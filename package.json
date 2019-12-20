@@ -1,6 +1,6 @@
 {
   "name": "peli-bot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Fish enthusiastic bot for Pelican's Discord server",
   "main": "bot.js",
   "author": "Simon Domingue",
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "node bot.js",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/MingoDev/PeliBot/issues"
   },
-  "homepage": "https://github.com/MingoDev/PeliBot#readme"
+  "homepage": "https://github.com/MingoDev/PeliBot#readme",
+  "devDependencies": {
+    "eslint-config-node": "^4.0.0"
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "extends": ["node"],
+  "rules": {
+    "dot-notation": "off",
+    "import/no-commonjs": "off",
+    "no-console": "off",
+    "indent": ["error", 4]
+  }
+}
