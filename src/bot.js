@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
-
+const package = require('../package.json');
 const config = require('../config.json');
 const data = require('./data');
+const logger = require('./logger');
 
 const bot = new Discord.Client();
 
@@ -70,7 +71,7 @@ function playSoundCommand(userCommand, textChannel, voiceChannel) {
     {
         const dispatcher = connection.play('./assets/sounds/' + audioFile, { volume : audioVolume });
         dispatcher.on("end", returnToNest);
-    }).catch(err => console.log(err));
+    }).catch(err => logger.error(err));
     startCooldown();
 }
 
@@ -127,4 +128,12 @@ bot.on('message', message => {
     playSoundCommand(userCommand, textChannel, voiceChannel);
 });
 
-bot.login(config.token);
+function startBot() {
+    logger.info('Authenticating bot...')
+    bot.login(config.token)
+        .then(() => logger.info('Success, awaiting commands...'))
+        .catch(err => logger.error(err));
+}
+
+logger.info(`Running ${package.name} ${package.version}, ${package.description}`);
+startBot();
